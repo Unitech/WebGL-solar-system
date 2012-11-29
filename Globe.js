@@ -170,7 +170,7 @@ Globe.prototype.propagation = function() {
     else
 	prop.current_radius += prop.speed;
 
-    console.log(prop.current_radius);
+
     self.parent.remove(prop.circle);
 
     var tmp_sphere = new THREE.Shape();

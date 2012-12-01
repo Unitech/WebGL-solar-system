@@ -74,6 +74,8 @@ SolarSystem.prototype.systemMatrice = function() {
 				  }));
 		
 	v_circle.rotation.set(Math.PI/2, 0, 0);
+	
+	
 	self.parent.add(v_circle);	
     }
 

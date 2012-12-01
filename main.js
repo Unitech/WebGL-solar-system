@@ -14,7 +14,8 @@ Global.init = function() {
 					 19, 
 					 600000);
     // Eye position
-    camera.position.set(0, 23000, 30000);
+    //camera.position.set(0, 23000, 30000);
+    camera.position.set(30000, 6000, 0);
     //camera.rotation.set(Math.PI/4, 0,0);
     scene = new THREE.Scene();
 
@@ -43,7 +44,7 @@ Global.generateMap = function() {
     
     solarSystem = new SolarSystem({
     	name : 'Europa',
-    	radius : 13000,
+    	radius : 19000,
     	scene : scene,
 	matrice : true,
     	star : {
@@ -55,10 +56,39 @@ Global.generateMap = function() {
 		max : 14000,
 		min : 700
 	    },	    
-    	    satellites : [{
+    	    satellites : [
+		{
+    		    name : 'Earth',
+		    radius : 1000,
+		    project : true,
+		    rotation : 40,
+    		    coordinates : [6400, 550, 0],
+    		    type : 'vividEarth',
+    		    revolution_time : 700,
+    		    rotation_time : 100,
+    		    satellites : [{
+    			name : 'Lune',
+    			radius : 100,
+			rotation : 50,
+    			coordinates : [1300, 0, 0],
+    			type : 'Moon',
+    			revolution_time : 200,
+    			rotation_time : 3
+    		    },{
+    			name : 'Lune',
+    			radius : 60,
+			rotation : 10,
+    			coordinates : [1300, 100, 0],
+    			type : 'Moon',
+    			revolution_time : 100,
+    			rotation_time : 3
+    		    }]
+		},
+		{
     		name : 'Earth',
     		radius : 100,
 		project : true,
+		    rotation : 19,
     		coordinates : [1400, 550, 0],
     		type : 'vividEarth',
     		revolution_time : 70,
@@ -74,6 +104,7 @@ Global.generateMap = function() {
     	    }, {
 	    	name : 'Orion',
 	    	radius : 230,
+		rotation : -20,
 		project : true,
 	    	coordinates : [-1800, -400, -400],
 	    	revolution_time : 130,
@@ -81,6 +112,7 @@ Global.generateMap = function() {
 	    }, {
 		name : 'Megathron',
 		radius : 530,
+		rotation : 130,
 		project : true,
 		coordinates : [3800, 90, -400],
 		revolution_time : 230,
@@ -106,6 +138,7 @@ Global.generateMap = function() {
     		    coordinates : [360, 0, 0],
     		    type : 'Moon',
     		    revolution_time : 15,
+		    rotation : 45,
     		    rotation_time : 3
     		}, {
 		    name : 'Lune',
@@ -113,7 +146,8 @@ Global.generateMap = function() {
     		    coordinates : [330, 0, 0],
     		    type : 'Moon',
     		    revolution_time : 20,
-    		    rotation_time : 3
+    		    rotation_time : 3,
+		    rotation : -20
     		}]
 	    }]
 	}
